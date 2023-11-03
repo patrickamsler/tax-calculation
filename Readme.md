@@ -6,8 +6,8 @@ Your goal is to implement a generic tax calculator for various communities in Sw
 
 ## Task
 
-1. Write a tax calculator `TaxCalculator.java` that can accommodate different tax rates and progressive taxation for different communities in Switzerland.
-2. The calculator should work based on a configuration provided for each community `TaxConfiguration.java`
+1. Write a tax calculator [TaxCalculator.java](src/main/java/ch/abraxas/TaxCalculator.java) that can accommodate different tax rates and progressive taxation for different communities in Switzerland.
+2. The calculator should work based on a configuration provided for each community [TaxConfiguration.java](src/main/java/ch/abraxas/TaxConfiguration.java)
 3. Incomes that are higher than the upper bound of the progression configuration can be ignored.
 
 The user can input the name of the community (as an uppercase string) and the income of the taxpayer (in double format) and the application prints the calculated income tax to the console.
