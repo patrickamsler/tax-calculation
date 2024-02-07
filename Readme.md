@@ -1,16 +1,16 @@
 # Swiss Tax Calculator - Coding Exercise
 
-## Introduction
+Your goal is to implement a generic tax calculator for various communities in Switzerland. 
+In Switzerland, different communities may have different tax rates and follow a progressive taxation system.
 
-Your goal is to implement a generic tax calculator for various communities in Switzerland. In Switzerland, different communities might have different tax rates and can follow a progressive taxation system. This coding exercise simulates the tax calculation in Switzerland using a step progression.
+The step progression for three communities is provided in [TaxConfiguration.java](src/main/java/ch/abraxas/TaxConfiguration.java). 
+Each progression configuration consists of a list with tax brackets (Steuerklassen), each having an upper bound in Swiss Francs and a rate (Steuersatz) in percent. 
+The list is sorted, with the first entry being the lowest bracket and the last one the highest.
 
-## Task
+Your task is to implement the function in [TaxCalculator.java](src/main/java/ch/abraxas/TaxCalculator.java) that selects the appropriate band depending on the income provided and performs a calculation based on the formula written below. 
+Incomes that are higher than the upper bound of the progression configuration can be ignored.
 
-1. Write a tax calculator [TaxCalculator.java](src/main/java/ch/abraxas/TaxCalculator.java) that can accommodate different tax rates and progressive taxation for different communities in Switzerland.
-2. The calculator should work based on a configuration provided for each community [TaxConfiguration.java](src/main/java/ch/abraxas/TaxConfiguration.java)
-3. Incomes that are higher than the upper bound of the progression configuration can be ignored.
-
-The user can input the name of the community (as an uppercase string) and the income of the taxpayer (in double format) and the application prints the calculated income tax to the console.
+The user can input the name of the community (as an uppercase string) and the income of the taxpayer (in double format), and the application prints the calculated income tax to the console.
 
 ```bash
 Enter community: ABRAXIEN
@@ -37,30 +37,27 @@ For an income of 5'000 CHF the tax would be 180 CHF:
 ```
 1'000 CHF * 2% + 4'000 CHF * 4% = 20 CHF + 160 CHF = 180 CHF
 ```
-However, an income of 25’000 CHF would lead to an error, as it exceeds the upper bound of 20’000 CHF in the given progression configuration.
+However, an income of 25’000 CHF would lead to an error and can be ignored, as it exceeds the upper bound of 20’000 CHF in the given progression configuration.
 
-## Progression Configuration
-
-Each progression configuration consists of a list with tax bracket (Steuerklasse) with an upper bound in Swiss Francs and a tax rate (Steuersatz) in percent.
-The list is sorted, with the first entry being the lowest bracket and the last one the highest.
+### Progression Configuration
 
 The current configurations for different communities are:
 
-### ABRAXIEN:
+#### ABRAXIEN:
 - 1’000 CHF, 2%
 - 8’000 CHF, 4%
 - 20’000 CHF, 10%
 
-### POLARIS:
+#### POLARIS:
 - 1’000 CHF, 0%
 - 4’000 CHF, 10%
 - 50’000 CHF, 20%
 - 100’000 CHF, 50%
 
-### STEUERION:
+#### STEUERION:
 - 20’000 CHF, 10%
 
-## Hints
+### Hints
 
 - Don't worry, while basic math is required to calculate the tax, this is primarily an algorithm exercise, not a math exercise. You only need a basic understanding of Java and concepts like loops.
 - Normally, for such calculations, BigDecimal data type would be used, and results would be rounded to 5 Rappen for billing purposes. In this exercise, use the double data type and output results without rounding.
